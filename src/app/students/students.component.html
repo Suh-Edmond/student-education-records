@@ -1,0 +1,25 @@
+ <div >
+     <div *ngIf="messageService.message.length" class="col-md-4">
+        <div *ngFor="let message of messageService.message"  class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{message}}</strong> 
+          </div>
+    </div>
+    <h2>Registered Students</h2>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <th>S/N</th>
+        <th>Name</th>
+        <th>Matricule Number</th>
+        <tr *ngFor="let student of registeredStudent">
+            <td>
+                {{student.id}}
+            </td>
+            <td>
+                 {{student.name}}
+            </td>
+            <td>
+                {{student.matriculeNumber}}
+            </td>
+        </tr>
+ </table>
+ </div>

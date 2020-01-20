@@ -1,0 +1,31 @@
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 100px;
+      font-size: 40px;
+      margin-bottom: 40px;
+}
+ul {
+    list-style: none;
+    
+}
+
+li {
+    float: left;
+    margin-left: 220px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    border:1px solid;
+    padding: 15px;
+    border-radius: 2px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    border-color:navy;
+    background-color:navy;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+ 
