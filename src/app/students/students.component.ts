@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisteredStudent } from '../registered-students';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-students',
@@ -13,14 +11,13 @@ export class StudentsComponent implements OnInit {
 
   registeredStudent:Student[];
 
-  constructor(private studentService:StudentService, private messageService: MessageService) { }
+  constructor(private studentService:StudentService) { }
 
   ngOnInit() {
     this.setRegisteredStudentFromService();
   }
 
   setRegisteredStudentFromService():void {
-    this.messageService.addMessage("Student Service Successfully Fetched all Regstered Students");
     this.studentService.getRegisteredStudent().subscribe(student => this.registeredStudent = student);
   }
 
