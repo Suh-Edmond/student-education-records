@@ -2,23 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 
+
+
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
+     
 
-  registeredStudent:Student[];
+      student:Student;
+      registeredStudent:Student[];
 
-  constructor(private studentService:StudentService) { }
+      constructor(private studentService:StudentService) { }
 
-  ngOnInit() {
-    this.setRegisteredStudentFromService();
-  }
+      ngOnInit() {
+        this.setRegisteredStudentFromService();
+         
+      }
 
-  setRegisteredStudentFromService():void {
-    this.studentService.getRegisteredStudent().subscribe(student => this.registeredStudent = student);
-  }
+      setRegisteredStudentFromService():void {
+        this.studentService.getRegisteredStudent().subscribe(student => this.registeredStudent = student);
+      }
+
+       
 
 }

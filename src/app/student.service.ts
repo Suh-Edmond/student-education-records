@@ -8,13 +8,16 @@ import { RegisteredStudent } from './registered-students';
 })
 export class StudentService {
 
-  constructor() { }
-
-  getRegisteredStudent():Observable<Student[]> {
-       return of(RegisteredStudent);
-  }
-  
-
+        constructor() { }
+        //gets all registered students
+        getRegisteredStudent():Observable<Student[]> {
+            return of(RegisteredStudent);
+        }
+        //gets a specific student via the id
+        getStudent(studentId:number):Observable<Student>
+        {
+           return of(RegisteredStudent.find(student => student.id === studentId));
+        }
 
 
 }

@@ -4,6 +4,7 @@
         <th>S/N</th>
         <th>Name</th>
         <th>Matricule Number</th>
+        <th>Information</th>
         <tr *ngFor="let student of registeredStudent">
             <td>
                 {{student.id}}
@@ -13,6 +14,9 @@
             </td>
             <td>
                 {{student.matriculeNumber}}
+            </td>
+            <td>
+                <button class="btn btn-info" routerLink="/detail/{{student.id}}">View Details</button>
             </td>
         </tr>
  </table>
