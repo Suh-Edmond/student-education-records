@@ -2,9 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 import { ActivatedRoute } from '@angular/router';
-
-import { StudentScore } from '../student-score';
-import { CalculatePointService } from '../calculate-point.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-student-details',
@@ -16,12 +14,12 @@ export class StudentDetailsComponent implements OnInit {
 
 
       student:Student;
-      regStudentScore:StudentScore
+     
       creditAtt:number = 0;
       creditEarn:number = 0;
       totalPoint:number = 0;
        
-      constructor(private studentService:StudentService, private route:ActivatedRoute) { 
+      constructor(private studentService:StudentService, private route:ActivatedRoute, private location:Location) { 
          
       }
 
@@ -37,11 +35,7 @@ export class StudentDetailsComponent implements OnInit {
         this.studentService.getStudent(studentId).subscribe(student => this.student = student);
       }
        
-      /* getStudentGrades():void
-      {
-        this.studentPoint.getGrades().subscribe(grade => this.studentGrade = grade);
-      }       
-       */
+       
 
       letterGrade(score:number):string{
             if(score >= 80  && score <= 100){
@@ -76,17 +70,22 @@ export class StudentDetailsComponent implements OnInit {
         switch(grade){
           case "A":
             point = 4.0;
+             
             break;
           case "B+":
+             
             point = 3.5;
             break;
           case "B":
+             
             point = 3.0;
             break;
           case "C+":
+             
             point = 2.5;
             break;
           case "C":
+             
             point = 2.0;
             break;
           case "D+":
@@ -104,6 +103,7 @@ export class StudentDetailsComponent implements OnInit {
 
       coursePoint(creditValue:number, score:number){
         let point = this.gradePoint(score, creditValue);
+        this.setCreditEarned(score, creditValue);
         let earnPoint:number = creditValue * point;
         this.totalPoint = this.totalPoint + earnPoint;
         this.creditAtt = this.creditAtt + creditValue;
@@ -117,5 +117,15 @@ export class StudentDetailsComponent implements OnInit {
         return gpa.toFixed(2);
       }
 
+      setCreditEarned(score:number, creditValue:number){
+        let point = this.gradePoint(score, creditValue)
+        if(score >= 50){
+          this.creditEarn += creditValue;
+        }
+      }
+
+      goBack(){
+        return this.location.back();
+      }
       
 }

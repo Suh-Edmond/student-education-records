@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
-
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -15,9 +15,10 @@ export class StudentsComponent implements OnInit {
       student:Student;
       registeredStudent:Student[];
 
-      constructor(private studentService:StudentService) { }
+      constructor(private studentService:StudentService, private location:Location) { }
 
       ngOnInit() {
+      
         this.setRegisteredStudentFromService();
          
       }
@@ -27,5 +28,7 @@ export class StudentsComponent implements OnInit {
       }
 
        
-
+     goBack(){
+       return this.location.back();
+     }
 }

@@ -1,13 +1,25 @@
- <div>
-     <h2>Excellent Students</h2>
-     <div>
-          <ul>
-              <li *ngFor ="let student1 of registeredStudent1" routerLink="/detail/{{student1.id}}">
-                  {{student1.name}}<br>{{student1.matriculeNumber}}
-              </li>
-              <li *ngFor ="let student2 of registeredStudent2"  routerLink="/detail/{{student2.id}}">
-                {{student2.name}}<br>{{student2.matriculeNumber}}
-            </li>
-          </ul>
-     </div>
- </div>
+  <!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+      </head>
+      <body>
+        
+            <h2>Excellent Students</h2>
+            <div>
+                 <ul>
+                     <li *ngFor ="let student1 of registeredStudent1" routerLink="/detail/{{student1.id}}">
+                      {{student1.name}}<br>{{student1.matriculeNumber}}
+                     </li>
+                     <li *ngFor ="let student2 of registeredStudent2"  routerLink="/detail/{{student2.id}}">
+                       {{student2.name}}<br>{{student2.matriculeNumber}}
+                   </li>
+                    
+                 </ul>
+                  
+            </div>
+         
+      </body>
+  </html>

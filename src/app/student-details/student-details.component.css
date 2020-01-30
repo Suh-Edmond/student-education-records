@@ -16,37 +16,55 @@ td {
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
+ 
 
 .name {
-    padding-left: 450px;
+    padding-left: 300px;
      
+}
+.matricule {
+    padding-left: 140px;
 }
 h5 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 .identity {
-    width: 850px;
+    width: 900px;
     text-align: left;
-    margin-left: 220px;
+    margin-left: 160px;
     margin-bottom: 10px;
     margin-top: 40px;
     border-color: lightgray;
-
+    padding:10px
 }
 th {
     
     background-color: darkgrey;
 }
 #transcript {
-    width: 800px;
+    width: 900px;
     text-align: center;
-    margin-left: 220px;
+    margin-left: 160px;
     margin-top: 5px;
     border-color: lightgray;
-    margin-bottom: 100px;
-    padding: 13px;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid lightgray;
+     
 }
+
+#grade
+{
+    margin-bottom: 120px;
+    margin-left: 160px;
+    margin-top: 0px;
+    border-color: lightgray;
+
+} 
+
+ 
+ 
  
  
  

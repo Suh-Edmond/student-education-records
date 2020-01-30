@@ -9,7 +9,7 @@ header {
     padding-left: 20px;
 }
 nav {
-    margin: 50px;
+    margin-top: 30px;
 }
  
 .dashboard {
@@ -36,4 +36,7 @@ a:hover {
     border: 1px solid;
     border-radius: 4px;
     text-decoration: none;
+}
+.row {
+    margin-bottom: 100px;
 }
